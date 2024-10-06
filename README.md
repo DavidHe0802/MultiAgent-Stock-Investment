@@ -31,6 +31,84 @@ stock_investment_pipeline/
 └── README.md
 ```
 
+## Component Descriptions
+
+### Agents
+
+1. **CEOAgent** (`ceo.py`)
+   - Reviews portfolio performance
+   - Assigns tasks to other agents
+   - Evaluates investment recommendations
+
+2. **WarrenBuffetAgent** (`warren_buffet.py`)
+   - Raises market questions based on CEO's tasks
+   - Decides which stocks to investigate further
+   - Makes final investment decisions based on analysis
+
+3. **MarketResearchAgent** (`MarketResearchAgent.py`)
+   - Fetches market information based on Buffet's questions
+   - Retrieves stock price history data
+
+4. **AnalystAgent** (`analyst.py`)
+   - Analyzes stock price trends
+   - Provides analysis reports
+
+5. **SecretaryAgent** (`Secretary.py`)
+   - Generates meeting notes summarizing the investment process
+
+6. **OperatorAgent** (`operator.py`)
+   - Parses and executes approved investment recommendations
+
+### Tools
+
+- **stock_scraper.py**: Provides functionality to scrape stock data from financial websites
+
+### Database
+
+1. **build_database.py**
+   - Creates and populates the SQLite database with stock data
+
+2. **db_manager.py**
+   - Manages database operations (querying, updating)
+
+3. **nasdaq_symbols.txt**
+   - Contains a list of NASDAQ stock symbols
+
+### Models
+
+- **portfolio.py**: Represents the investment portfolio
+  - Tracks cash balance and stock holdings
+  - Provides methods for buying and selling stocks
+  - Generates performance reports
+
+### Utils
+
+1. **data_processing.py**: Contains utility functions for processing financial data
+
+2. **visualization.py**: Provides functions for visualizing stock data and portfolio performance
+
+### Office
+
+- **office_simulation.py**: Orchestrates the entire investment simulation
+  - Initializes all agents
+  - Runs the daily investment cycle
+  - Generates daily reports
+
+## Workflow
+
+1. The CEO reviews the portfolio performance and assigns tasks.
+2. Warren Buffet raises market questions based on these tasks.
+3. The Market Research Agent fetches relevant market information.
+4. Buffet reviews this information and decides which stock trends to investigate.
+5. The Market Research Agent retrieves detailed stock trend data.
+6. The Analyst analyzes this data and provides a report.
+7. Buffet makes final investment decisions based on all available information.
+8. The CEO evaluates these recommendations.
+9. The Secretary generates meeting notes summarizing the process.
+10. If approved, the Operator executes the investment decisions.
+11. The process repeats until a decision is approved or a time limit is reached.
+12. A daily report is generated, including all meeting notes and executed trades.
+
 ## Setup and Execution
 
 1. **Clone the repository:**
