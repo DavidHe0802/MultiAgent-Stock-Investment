@@ -1,6 +1,7 @@
 # Stock Investment Pipeline
 
-[Previous sections remain unchanged]
+This project simulates a stock investment pipeline, mimicking the decision-making process of a financial firm. It includes various agents (CEO, Warren Buffet, Market Research, Analyst, Secretary, and Operator) that interact to make investment decisions based on market data and analysis.
+
 
 ## Project Structure
 
@@ -62,53 +63,6 @@ stock_investment_pipeline/
 
    The `main.py` file is the entry point of the application. It initializes the `OfficeSimulation` class and starts the daily investment cycle.
 
-## Main Components
-
-### main.py
-This is the entry point of the application. It typically contains code to:
-- Initialize the Portfolio
-- Create an instance of the OfficeSimulation
-- Start the daily investment cycle
-- Handle any high-level error logging or reporting
-
-Example content of `main.py`:
-
-```python
-from office.office_simulation import OfficeSimulation
-from models.portfolio import Portfolio
-import time
-
-if __name__ == "__main__":
-    portfolio = Portfolio()
-    office = OfficeSimulation(portfolio)
-    
-    while True:
-        try:
-            daily_report = office.run_daily_cycle()
-            print(daily_report)
-            # Wait for next day (you might want to implement a proper scheduling mechanism)
-            time.sleep(86400)  # Sleep for 24 hours
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            # Implement error handling and reporting here
-```
-
-### requirements.txt
-This file lists all the Python packages required to run the project. It typically includes:
-
-```
-yfinance
-pandas
-numpy
-matplotlib
-sqlite3
-openai
-```
-
-To add or update dependencies, you can modify this file and then run:
-```
-pip install -r requirements.txt
-```
 
 ## Dependencies
 
