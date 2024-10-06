@@ -1,0 +1,7 @@
+Performance Report as of 2024-10-05
+
+Available Cash: $100000.00
+
+Stock Performance:
+Total Portfolio Value: $100000.00
+Total Portfolio Return: 0.00%
